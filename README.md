@@ -13,4 +13,3 @@ npm start
 * vous pouvez aussi git clone le repo et l'utiliser comme base du projet
 
 npm install dans le projet
-
