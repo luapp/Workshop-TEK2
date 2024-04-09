@@ -1,36 +1,24 @@
-# Workshop React Partie 1
+# Workshop React Partie 2
 
 ## Configuration du projet
 
 ### Avoir NodeJS
 
-npx create-react-app my-react
-
-cd my-react
-
-npm start
-
-* vous pouvez aussi git clone le repo et l'utiliser comme base du projet
+* git clone le repo et l'utiliser comme base du projet
 
 npm install dans le projet
 
-## Introduction à React
+## Introduction à Firebase et Tauri
 
-ReactJS est une bibliothèque JavaScript open-source développée par Facebook, principalement utilisée pour créer des interfaces utilisateur interactives et dynamiques pour les applications web.
+### Qu'est-ce que Firebase ?
 
-### Qu'est-ce que ReactJS ?
+- **Firebase est comme une boîte à outils magique pour les développeurs d'applications. Imaginez que vous construisez un château de sable. Firebase vous fournirait les seaux, les pelles, et même le sable nécessaire. Dans le monde du développement d'applications, cela signifie que Firebase vous donne tout ce dont vous avez besoin pour créer, améliorer et faire grandir votre application, sans avoir à construire chaque outil à partir de zéro.
 
-- **Composants Réutilisables** : React encourage la construction d'interfaces sous forme de composants réutilisables.
-- **Virtual DOM** : React utilise un Virtual DOM pour optimiser les mises à jour du DOM, améliorant ainsi les performances.
-- **Flux de Données Unidirectionnel** : La gestion unidirectionnelle des données facilite le suivi des changements d'état.
+### Pourquoi Firebase ?
 
-### Pourquoi ReactJS ?
-
-## Concepts de Base de ReactJS
-
-- **Composants** : Le cœur de React, encapsulant le code et le rendu.
-- **État** : Gère les données dynamiques à l'intérieur d'un composant.
-- **Props** : Permettent de passer des données d'un composant parent à un composant enfant.
+    > ***Simplicité: Firebase rend le processus de développement plus simple, car il élimine la nécessité de gérer des serveurs ou de développer des logiciels backend complexes.
+    > ***Évolutivité: Votre application peut grandir en utilisant les services de Firebase sans que vous ayez à vous soucier de la gestion de l'infrastructure.
+    > ***Intégration Google: Étant une partie de l'écosystème Google, Firebase s'intègre parfaitement avec d'autres services Google, offrant une expérience fluide et puissante
 
 ## Exemple de Code
 
@@ -39,15 +27,11 @@ ReactJS est une bibliothèque JavaScript open-source développée par Facebook, 
 Windows, MacOS, Linux
 NodeJS
 NPM
-npx create-react-app my-react
-cd my-react
+git clone <REPO_URL>
+cd <REPO_NAME>
+npm install
 npm start
 ```
-
-## Exercices
-
-1. **Page de Connexion Simple** : Créez une page de connexion sans authentification ; le bouton de connexion devrait permettre de naviguer vers la page suivante.
-2. **Liste de Tâches** : Implémentez une liste de tâches sans base de données, en stockant les données dans un tableau.
 
 ## Contact
 
