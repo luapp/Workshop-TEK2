@@ -33,6 +33,27 @@ npm install
 npm start
 ```
 
+### Cle Firebase si vous avez pas de compte Google (Documentation Firebase)
+```
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDA9IEoVjR7Se1sD8cg9HZer7oa2J3hbys",
+  authDomain: "testsrv-wt.firebaseapp.com",
+  projectId: "testsrv-wt",
+  storageBucket: "testsrv-wt.appspot.com",
+  messagingSenderId: "617221161312",
+  appId: "1:617221161312:web:51f646278a5675cf3b9e05"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+```
+
 ## Exercices
 
 ### 1. Initialisation du projet avec Firebase
