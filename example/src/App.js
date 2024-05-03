@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {initializeApp} from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from './app.module.css';
 
 const firebaseConfig = {
@@ -57,12 +57,22 @@ function App() {
         setTodoList(updatedList)
     }
 
+    const signout = () => {
+        const auth = getAuth();
+        signOut(auth).then(() => {
+            setAuth(false);
+            set_live_user('');
+        }).catch((error) => {
+            window.alert('An error occurred');
+        });
+    }
+
 
     if (auth) {
         return (
             <div className={app.app}>
                 <h1>Welcome {user}</h1>
-                <button onClick={() => setAuth(false)}>Logout</button>
+                <button onClick={signout}>Logout</button>
                 <h2>Todo List:</h2>
                 <ul>
                     {todoList.map((todo, index) => (
