@@ -7,7 +7,7 @@ function App() {
     const [auth, setAuth] = useState(false)
 
 
-    
+
     const [user, setUser] = useState('')
     const [password, setPassword] = useState('')
     const [todoList, setTodoList] = useState([])
@@ -70,7 +70,13 @@ function App() {
     } else {
         return (
             <div className={app.app}>
-                <h1>React Workshop Offline Auth</h1>
+                <div className={app.divbox}>
+                    <h1 className={`${app.h1t} ${app.n1}`}>H</h1>
+                    <h1 className={`${app.h1t} ${app.n2}`}>E</h1>
+                    <h1 className={`${app.h1t} ${app.n3}`}>L</h1>
+                    <h1 className={`${app.h1t} ${app.n4}`}>L</h1>
+                    <h1 className={`${app.h1t} ${app.n5}`}>O</h1>
+                </div>
                 <br />
                 <input type="text" placeholder="Username" value={user} onChange={handleUser} />
                 <br />

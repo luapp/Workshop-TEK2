@@ -1,6 +1,97 @@
+/* app.module.css */
+
 .app {
-  text-align: center;
-  justify-content: center;
-  user-select: none;
-  color: black;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.app input[type="text"],
+.app input[type="password"],
+.app button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.app button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.app button:hover {
+    background-color: #0056b3;
+}
+
+.app ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.app ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.app ul li button {
+    background-color: #dc3545;
+    width: 100px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.app ul li button:hover {
+    background-color: #c82333;
+}
+
+
+
+
+.divbox {
+    display: flex;
+    flex-direction: row;
+}
+
+.h1t {
+    margin: 0;
+    padding: 0;
+    font-size: xx-large;
+}
+
+.n1 {
+    color: #0056b3;
+}
+
+.n2 {
+    color: #c82333;
+}
+
+.n3 {
+    color: blueviolet;
+}
+
+.n4 {
+    color: chartreuse;
+}
+
+.n5 {
+    color: rgb(192, 50, 205);
 }
