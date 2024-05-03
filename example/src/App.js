@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import {initializeApp} from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from './app.module.css';
+import "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore"; 
+
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyDA9IEoVjR7Se1sD8cg9HZer7oa2J3hbys",
@@ -12,6 +17,8 @@ const firebaseConfig = {
     appId: "1:617221161312:web:51f646278a5675cf3b9e05"
 };
 const fire_app = initializeApp(firebaseConfig);
+const db = getFirestore(fire_app);
+
 
 function App() {
   const [auth, setAuth] = useState(false);
@@ -27,6 +34,10 @@ function App() {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+
+  const add = () => {
+    
+    }
 
   const login = () => {
     const auth = getAuth();
@@ -48,6 +59,9 @@ function App() {
         const newTodo = prompt('Enter a new todo item:')
         if (newTodo) {
             setTodoList([...todoList, newTodo])
+            setDoc(doc(db, "User", "User"), {
+                name: newTodo
+              });
         }
     }
 
