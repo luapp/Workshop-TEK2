@@ -1,38 +1,48 @@
-import React, { useState } from 'react'
-import app from './app.module.css'
+import React, { useState } from 'react';
+import {initializeApp} from 'firebase/app';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import app from './app.module.css';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDA9IEoVjR7Se1sD8cg9HZer7oa2J3hbys",
+    authDomain: "testsrv-wt.firebaseapp.com",
+    projectId: "testsrv-wt",
+    storageBucket: "testsrv-wt.appspot.com",
+    messagingSenderId: "617221161312",
+    appId: "1:617221161312:web:51f646278a5675cf3b9e05"
+};
+const fire_app = initializeApp(firebaseConfig);
 
 function App() {
-    const user_db = 'luapp'
-    const password_db = 'lx123'
-    const [auth, setAuth] = useState(false)
+  const [auth, setAuth] = useState(false);
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [todoList, setTodoList] = useState([]);
+  const [live_user, set_live_user] = useState('');
 
+  const handleUser = (e) => {
+    setUser(e.target.value);
+  };
 
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
-    const [user, setUser] = useState('')
-    const [password, setPassword] = useState('')
-    const [todoList, setTodoList] = useState([])
-
-
-
-
-
-    const handleUser = (e) => {
-        setUser(e.target.value)
-    }
-
-    const handlePassword = (e) => {
-        setPassword(e.target.value)
-    }
-
-    const login = () => {
-        if (user === user_db && password === password_db) {
-            window.alert('Login Success')
-            setAuth(true)
-        } else {
-            window.alert('Login Failed')
-            setAuth(false)
-        }
-    }
+  const login = () => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, user, password)
+    .then((userCredential) => {
+        const user = userCredential.user;
+        window.alert('Login successful');
+        setAuth(true);
+        set_live_user(user.email);
+    })
+    .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    window.alert(errorMessage);
+    });
+  };
 
     const handleAddTodo = () => {
         const newTodo = prompt('Enter a new todo item:')
@@ -46,8 +56,6 @@ function App() {
         updatedList.splice(index, 1)
         setTodoList(updatedList)
     }
-
-
 
 
     if (auth) {
